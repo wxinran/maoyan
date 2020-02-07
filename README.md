@@ -12,6 +12,25 @@ https://github.com/wxinran/maoyan
 | -------- | ------------ | -------- | -------- |
 | 猫眼电影 | 正在热映页面 | 3天      | 1天      |
 |          | 即将上映页面 | 3天      | 1天      |
+|          | 详情页       | 2天      | 1天      |
+|          | 搜索页       | 2天      | 1天      |
 
 
 
+## Project setup
+
+```
+yarn install
+```
+
+### Compiles and hot-reloads for development
+
+```
+yarn run serve
+```
+
+### Compiles and minifies for production
+
+```
+yarn run build
+```
