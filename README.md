@@ -15,6 +15,10 @@ https://github.com/wxinran/maoyan
 |          | 详情页       | 2天      | 1天      |
 |          | 搜索页       | 2天      | 1天      |
 
+## 图片
+
+![movie页](./public/img/movie.png)
+
 
 
 ## Project setup
