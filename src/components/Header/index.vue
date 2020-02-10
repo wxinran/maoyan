@@ -1,6 +1,6 @@
 <template>
     <div class="header">
-        <h1>猫眼电影</h1>
+        <h1>{{title}}</h1>
     </div>
 </template>
 <style lang="scss">
@@ -21,6 +21,12 @@
 export default {
     data() {
         return {}
+    },
+    props : {
+        title : {
+            type : String,
+            default : '猫眼电影'
+        }
     }
 }
 </script>

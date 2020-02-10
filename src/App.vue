@@ -1,13 +1,13 @@
 <template>
-  <div id="app">
-    <router-view/>
-  </div>
+    <keep-alive>
+        <router-view />
+    </keep-alive>
 </template>
 
 <style>
 * {
-  padding: 0;
-  margin: 0;
-  list-style: none;
+    padding: 0;
+    margin: 0;
+    list-style: none;
 }
 </style>
