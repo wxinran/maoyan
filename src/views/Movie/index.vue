@@ -4,17 +4,20 @@
         <DownloadApp></DownloadApp>
         <div class="nav">
             <div class="city">
-                <span>{{data.city}}</span>
+                <router-link tag="span" to="/movie/city">{{data.city}}</router-link>
                 <i class="iconfont icon-lower-triangle"></i>
             </div>
             <div class="nav-title">
-                <span class="now">正在热映</span>
-                <span class="future">即将上映</span>
+                <router-link tag="span" to="/movie/showingup" class="now">正在热映</router-link>
+                <router-link tag="span" to="/movie/comingsoon" class="future">即将上映</router-link>
             </div>
-            <div class="search">
+            <router-link tag="div" to="/movie/search" class="search">
                 <i class="iconfont icon-sousuo"></i>
-            </div>
+            </router-link>
         </div>
+        <keep-alive>
+            <router-view />
+        </keep-alive>
         <TabBar></TabBar>
     </div>
 </template>
@@ -46,6 +49,10 @@
             text-align:center;
             margin:0 12px;
             font-weight:700;
+            &.router-link-active {
+                color: #ef4238;
+                border-bottom: 2px #ef4238 solid;
+        }
         }
     }
     .search {

@@ -1,0 +1,3 @@
+<template>
+    <p>即将上映</p>
+</template>
