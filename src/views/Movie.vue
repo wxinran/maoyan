@@ -1,7 +1,10 @@
 <template>
     <div class="home">
+        <!-- 头部 -->
         <Header title="猫眼电影"></Header>
+        <!-- 下载程序 -->
         <DownloadApp></DownloadApp>
+        <!-- 导航 -->
         <div class="nav">
             <div class="city">
                 <router-link tag="span" to="/movie/city">{{data.city}}</router-link>
