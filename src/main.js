@@ -6,6 +6,10 @@ import axios from 'axios'
 // 安装
 Vue.prototype.$http = axios;
 
+Vue.filter('setWH', (url, arg) => {
+  return url.replace(/w\.h/, arg);
+})
+
 new Vue({
   router,
   store,

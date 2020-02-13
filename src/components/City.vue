@@ -7,7 +7,7 @@
                     <li v-for="item in hotList" :key="item.id">{{ item.nm }}</li>
                 </ul>
             </div>
-            <div class="city_sort">
+            <div class="city_sort" ref="city_sort">
                 <div v-for="item in cityList" :key="item.index">
                     <h2>{{ item.index }}</h2>
                     <ul>
@@ -18,7 +18,7 @@
         </div>
         <div class="city_index">
             <ul>
-                <li v-for="item in cityList" :key="item.index">{{ item.index }}</li>
+                <li v-for="(item, index) in cityList" :key="item.index" @touchstart="handleToIndex(index)">{{ item.index }}</li>
             </ul>
         </div>
     </div>
@@ -34,14 +34,14 @@
     .city_list {
         flex: 1;
         overflow: auto;
-        background: #FFF5F0;
+        background: #F5F5F5;
         .city_hot {
             margin-top: 20px;
             h2 {
                 padding-left: 15px;
                 line-height: 30px;
                 font-size: 14px;
-                background:#F0F0F0;
+                background:#EBEBEB;
                 font-weight: normal;
             }
             ul {
@@ -80,20 +80,28 @@
                     padding-left: 10px;
                     margin-top: 10px;
                     li {
+                        width: 95%;
+                        height: 40px;
+                        font-size: 15px;
                         line-height: 30px;
+                        background: #F5F5F5;
+                        border-bottom: 1px solid #C8C7CC;
                     }
                 }
             }
         }
     }
     .city_index {
-        width:20px;
+        width:15px;
+        font-size: 12px;
         display: flex;
-        background-color: white;
+        background-color: #EBEBEB;
         flex-direction:column;
         justify-content:center;
         text-align: center;
-        border-left:1px #e6e6e6 solid;
+        li {
+            height: 20px;
+        }
     }
 }
 </style>
@@ -161,6 +169,10 @@ export default {
                 hotList
             }
 
+        },
+        handleToIndex(index) {
+            let h2 = this.$refs.city_sort.getElementsByTagName('h2');
+            this.$refs.city_sort.parentNode.scrollTop = h2[index].offsetTop;
         }
     },
     // 组件创建完成时
