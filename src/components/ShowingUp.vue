@@ -46,13 +46,12 @@
                     font-size: 17px;
                     line-height: 24px;
                     width: 150px;
-                    overflow: hidden;
                     white-space: nowrap;
-                    text-overflow: ellipsis;
+                    display: flex;
+                    align-items: center;
                     img {
+                        padding-left: 5px;
                         width: 50px;
-                        position: absolute;
-                        right:10px; top: 5px;
                     }
                 }
                 p {
