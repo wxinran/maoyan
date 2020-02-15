@@ -9,6 +9,7 @@
     width: 100%;
     background-color: #E54847;
     color: white;
+    position: relative;
     h1 {
         font-size: 18px;
         font-weight: normal;

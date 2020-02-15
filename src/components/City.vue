@@ -24,8 +24,8 @@
     </div>
 </template>
 <style lang="scss" scoped>
-.city_body {
-    margin-top: 45px;
+.content .city_body {
+    margin-top: 51px;
     display: flex;
     width: 100%;
     position: absolute;
@@ -46,9 +46,9 @@
             }
             ul {
                 &::after{ 
-                    content:"";
+                    content: "";
                     display: block;
-                    clear:both;
+                    clear: both;
                 }
                 li {
                     float: left;

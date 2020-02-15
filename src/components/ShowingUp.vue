@@ -7,8 +7,8 @@
                 </div>
                 <div class="info_list">
                     <h2>{{item.nm}} <img v-if="item.version" src="@/assets/maxs.png" alt=""></h2>
-                    <p>观众评 <span class="grade">{{ item.sc}}</span></p>
-                    <p>主演：{{ item.star }}</p>
+                    <p><span>{{ item.wish}}</span> 人想看</p>
+                    <p v-show="item.star">主演：{{ item.star }}</p>
                     <p>{{ item.showInfo }}</p>
                 </div>
                 <div :class="item.preShow ? 'btn_advance' : 'btn_mall'">
@@ -18,7 +18,7 @@
         </ul>
     </div>
 </template>
-<style lang="scss">
+<style lang="scss" scoped>
 .movie_body {
     flex: 1;
     overflow: auto;
@@ -63,7 +63,7 @@
                     overflow: hidden;
                     white-space: nowrap;
                     text-overflow: ellipsis;
-                    .grade {
+                    span {
                         font-weight: 700;
                         color: #faaf00;
                         font-size: 15px;
@@ -104,7 +104,7 @@ export default {
         }
     },
     created() {
-        
+        // 请求数据
         this.$http
             .get('/api/movieOnInfoList?cityId=10')
             .then((res) => {

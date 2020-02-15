@@ -10,4 +10,7 @@
     margin: 0;
     list-style: none;
 }
+html,body {
+    height: 100%;
+}
 </style>
