@@ -94,7 +94,7 @@ export default {
     mounted() {
         // 请求数据
         this.$http
-            .get('/ajax/comingList?ci=10')
+            .get('/ajax/comingList?ci=10&token=bLLOajfjB689MOBKztwUNmBLOvAAAAAA-AkAAIyAkolPug7UppDJKy20IP1bndglQKIG_BsNQ7T5eoHUXzKX7YfISv-z7zIkmY9qPA&limit=10&optimus_uuid=D0C18E00480A11EA966EF5530B3A8582F2325B0C1FFB4B7C91A3A734D777FCC0&optimus_risk_level=71&optimus_code=10')
             // 返回结果
             .then((res) => {
                 this.comingList = res.data.coming;
