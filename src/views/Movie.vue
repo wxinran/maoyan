@@ -6,7 +6,7 @@
         <DownloadApp></DownloadApp>
         <!-- 导航 -->
         <div class="content">
-            <div class="nav">
+            <div :class="'nav ' + ( $route.path === ('/movie/search') ? 'hidden' : '' )">
                 <router-link tag="div" to="/movie/city" class="city">
                     <span>{{data.city}}</span>
                     <i class="iconfont icon-lower-triangle"></i>
@@ -46,6 +46,9 @@
             align-items: center;
             background: white;
             z-index: 10;
+            &.hidden {
+                display: none;
+            }
             .city {
                 margin-left: 20px;
                 height: 100%;
@@ -106,9 +109,13 @@ export default {
     data() {
         return {
             data: {
-                city: "上海"
+                city: "上海",
             }
         }
-    }
+    },
+    // 方法
+    methods: {
+
+    },
 };
 </script>
