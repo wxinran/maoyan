@@ -5,7 +5,13 @@
         <TabBar></TabBar>
     </div>
 </template>
-
+<style>
+.cinema {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+</style>
 <script>
 // 引入
 import Header from '@/components/Header'

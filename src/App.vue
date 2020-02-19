@@ -4,11 +4,14 @@
     </keep-alive>
 </template>
 
-<style>
+<style lang="scss">
 * {
     padding: 0;
     margin: 0;
     list-style: none;
+    &::-webkit-scrollbar {
+    display: none;
+}
 }
 html,body {
     height: 100%;
