@@ -88,16 +88,26 @@ export default {
     // 数据
     data() {
         return {
-            comingList: []
+            comingList: [],
+            prevCityId: -1
         }
     },
-    mounted() {
-        // 请求数据
+    activated() {
+        // 获取state中的城市id
+        let cityId = this.$store.state.city.id;
+        // 判断城市是否修改
+        if (this.prevCityId === cityId) {
+            return;
+        }
+        // 城市修改请求数据
         this.$http
-            .get('/ajax/comingList?ci=10&token=bLLOajfjB689MOBKztwUNmBLOvAAAAAA-AkAAIyAkolPug7UppDJKy20IP1bndglQKIG_BsNQ7T5eoHUXzKX7YfISv-z7zIkmY9qPA&limit=10&optimus_uuid=D0C18E00480A11EA966EF5530B3A8582F2325B0C1FFB4B7C91A3A734D777FCC0&optimus_risk_level=71&optimus_code=10')
+            .get('/ajax/comingList?ci=' + cityId + '&token=bLLOajfjB689MOBKztwUNmBLOvAAAAAA-AkAAIyAkolPug7UppDJKy20IP1bndglQKIG_BsNQ7T5eoHUXzKX7YfISv-z7zIkmY9qPA&limit=10&optimus_uuid=D0C18E00480A11EA966EF5530B3A8582F2325B0C1FFB4B7C91A3A734D777FCC0&optimus_risk_level=71&optimus_code=10')
             // 返回结果
             .then((res) => {
-                this.comingList = res.data.coming;
+                if (res.statusText === 'OK') {
+                    this.comingList = res.data.coming;
+                    this.prevCityId = cityId;
+                }
             })
     }
 }

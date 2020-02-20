@@ -99,17 +99,25 @@
 export default {
     data() {
         return {
-            movieList: []
+            movieList: [],
+            prevCityId: -1
         }
     },
-    created() {
-        // 请求数据
+    activated() {
+        // 获取state中的城市id
+        let cityId = this.$store.state.city.id;
+        // 判断城市是否修改
+        if (this.prevCityId === cityId) {
+            return;
+        }
+        // 城市修改请求数据
         this.$http
-            .get('/api/movieOnInfoList?cityId=10')
+            .get('/api/movieOnInfoList?cityId=' + cityId)
             .then((res) => {
                 let msg = res.data.msg;
                 if( msg === 'ok' ) {
                     this.movieList = res.data.data.movieList;
+                    this.prevCityId = cityId;
                 }
             })
     }

@@ -7,11 +7,11 @@ import axios from 'axios'
 Vue.prototype.$http = axios;
 
 Vue.filter('setWH', (url, arg) => {
-  return url.replace(/w\.h/, arg);
+    return url.replace(/w\.h/, arg);
 })
 
 new Vue({
-  router,
-  store,
-  render: h => h(App)
+    router,
+    store,
+    render: h => h(App)
 }).$mount('#app')

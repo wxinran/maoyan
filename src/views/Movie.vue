@@ -8,7 +8,7 @@
         <div class="content">
             <div :class="'nav ' + ( $route.path === ('/movie/search') ? 'hidden' : '' )">
                 <router-link tag="div" to="/movie/city" class="city">
-                    <span>{{data.city}}</span>
+                    <span>{{ $store.state.city.nm}}</span>
                     <i class="iconfont icon-lower-triangle"></i>
                 </router-link>
                 <div class="nav-title">
@@ -60,6 +60,9 @@
                 &.router-link-active {
                     color: #ef4238;
                     border-bottom: 2px #ef4238 solid;
+                    i {
+                        color: #ef4238;
+                    }
                 }  
             }
             .nav-title {
@@ -109,7 +112,7 @@ export default {
     data() {
         return {
             data: {
-                city: "上海",
+                
             }
         }
     },

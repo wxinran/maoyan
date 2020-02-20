@@ -75,18 +75,26 @@ export default {
     data() {
         return {
             // 影院列表数据
-            cinemaList: []
+            cinemaList: [],
+            prevCityId: -1
         }
     },
-    mounted() {
-        //发送请求
+    activated() {
+        // 获取state中的城市id
+        let cityId = this.$store.state.city.id;
+        // 判断城市是否修改
+        if (this.prevCityId === cityId) {
+            return;
+        }
+        // 城市修改请求数据
         this.$http
-            .get('/ajax/cinemaList?day=2020-02-18&offset=0&limit=20&optimus_code=10')
+            .get('/ajax/cinemaList?cityId=' + cityId)
             // 返回数据
             .then((res) => {
                 if (res.statusText === 'OK') {
                     // 存储影院数据
                     this.cinemaList = res.data.cinemas;
+                    this.prevCityId = cityId;
                 }
             })
     },

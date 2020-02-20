@@ -127,8 +127,10 @@ export default {
         message(newVal) {
             let me = this
             this.cancelRequest();
+            // 获取当前的城市id
+            let cityId = this.$store.state.city.id;
             this.$http
-                .get('/ajax/search?kw=' + newVal + '&cityId=10&stype=-1', {
+                .get('/ajax/search?kw=' + newVal + '&cityId=' + cityId + '&stype=-1', {
                     cancelToken: new this.$http.CancelToken( function(c) {
                         me.source = c;
                     })
