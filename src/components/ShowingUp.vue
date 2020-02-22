@@ -1,7 +1,7 @@
 <template>
     <div class="movie_body">
         <ul>
-            <li v-for="item in movieList" :key="item.id">
+            <router-link tag="li" :to="'/detail/' + item.id " v-for="item in movieList" :key="item.id">
                 <div class="pic">
                     <img :src="item.img | setWH('128.180')">
                 </div>
@@ -14,8 +14,9 @@
                 <div :class="item.preShow ? 'btn_advance' : 'btn_mall'">
                     {{ item.preShow ? '预售' : '购买'}}
                 </div>
-            </li>
+            </router-link>
         </ul>
+        <router-view></router-view>
     </div>
 </template>
 <style lang="scss" scoped>

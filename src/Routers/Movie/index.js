@@ -4,19 +4,19 @@ export default {
     children: [
         {
             path : 'city',
-            component : () => import('@/components/City')
+            component: () => import('@/components/City')
         },
         {
             path : 'showingup',
-            component : () => import('@/components/ShowingUp')
+            component: () => import('@/components/ShowingUp')
         },
         {
             path : 'comingSoon',
-            component : () => import('@/components/ComingSoon')
+            component: () => import('@/components/ComingSoon')
         },
         {
             path : 'search',
-            component : () => import('@/components/Search')
+            component: () => import('@/components/Search')
         },
         {
             path: '/movie',

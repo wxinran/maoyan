@@ -1,5 +1,6 @@
 <template>
     <div class="header">
+        <slot></slot>
         <h1>{{title}}</h1>
     </div>
 </template>
@@ -10,6 +11,13 @@
     background-color: #E54847;
     color: white;
     position: relative;
+    i {
+        position: absolute;
+        left: 5px;
+        top: 50%;
+        margin-top: -13px;
+        font-size: 26px;
+    }
     h1 {
         font-size: 18px;
         font-weight: normal;

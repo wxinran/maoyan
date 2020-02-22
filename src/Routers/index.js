@@ -11,6 +11,11 @@ export default new Router({
         Movie,
         Mine,
         Cinema,
+        {
+            path: '/detail/:id',
+            component: () => import('@/views/Detail')
+        },
+
         { 
             path: '/',
             redirect: '/movie'

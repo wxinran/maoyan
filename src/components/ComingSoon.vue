@@ -1,7 +1,7 @@
 <template>
     <div class="movie_body">
         <ul>
-            <li v-for="item in comingList" :key="item.id">
+            <router-link tag="li" :to="'/detail/' + item.id " v-for="item in comingList" :key="item.id">
                 <div class="pic" @tap="handleToDetail(item.id)"><img :src="item.img | setWH('128.180')"></div>
                 <div class="info_list">
                     <h2 @tap="handleToDetail(item.id)">{{ item.nm }} <img v-if="item.version" src="@/assets/maxs.png" alt=""></h2>
@@ -12,7 +12,7 @@
                 <div class="btn_pre">
                     想看
                 </div>
-            </li>
+            </router-link>
         </ul>
     </div>
 </template>
